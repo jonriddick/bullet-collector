@@ -46,6 +46,10 @@
 			<div>
 				<h1>Deadpool needs <span id="number-to-guess"></span> bullets!</h1>
 			</div>
+			<div>
+				<h1>Deadpool has <span id="loadout"></span> bullets!</h1>
+			</div>
+
 		</div>
 
 
@@ -80,7 +84,9 @@ $(document).ready(function() {
 
 });
 
+//var mb = $('#myDiv').text();
 
+var targetNumber = $('#number-to-guess').text();
  
 $("#number-to-guess").text(targetNumber);
 
@@ -88,7 +94,7 @@ var counter = 0;
 
 var bulletOptions = [10,5,3,7];
 
-for (var i=0; i<bulletOptions.length; i++) {
+for (var i = 0; i < bulletOptions.length; i++) {
 	var imageBullet = $("<img>");
 	imageBullet.addClass("bullet-image");
 	imageBullet.attr("src", "https://thumbs.dreamstime.com/t/bullet-icon-cartoon-style-isolated-vector-illustration-88211476.jpg");
@@ -102,7 +108,9 @@ $(".bullet-image").on("click", function() {
 
 	counter += bulletValue;
 
-	alert ("New Score: " + counter);
+	$("#loadout").html(counter);
+
+	/*alert ("New Score: " + counter);
 
 	if (counter===targetNumber) {
 		alert("You win!");
@@ -110,7 +118,7 @@ $(".bullet-image").on("click", function() {
 	else if (counter >= targetNumber) {
 		alert("You lose!");
 	}
-
+	*/
 }); 
 
   </script>
