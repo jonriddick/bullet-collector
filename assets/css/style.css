@@ -1,0 +1,38 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: ;
+	font-size: 2vw;
+}
+
+h1 {
+	color: red;
+	text-align: center;
+	padding: 25px;
+	background-color: lightgrey;
+}
+
+#instructions{
+	background-color: tan;
+	border-style: solid;
+	border-color: black;
+	border-width: 3px;
+	font-size: 15px;
+	max-width: 500px;
+	padding: 25px;
+}
+
+#dpbox{
+	max-width: 500px;
+}
+
+#dpimg {
+	max-width: 400px;
+	/*height: 300px;
+	width: 300px;*/
+}
+#bullets {
+	background-color: red;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	-->
+	<title>Deadpools Bullet Collector Game</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="row">
+			<header class="col-sm-12">
+				<h1>Deadpools Bullet Collector Game</h1>
+			</header>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-2">
+			</div>
+
+			<div class="col-sm-4"  id="instructions">
+				<p>Deadpool needs an exact amount of bullets for his next mission!<br>
+				<br>
+				Your mission is to make sure he gets the EXACT ammount of bullets he needs.<br>
+				<br>
+				There are 4 bullet buttons below that will add to deadpools total loadout.<br>
+				<br>
+				Each button has a random number assigned to it for each mission. The buttons will change their value for each new mission.<br>
+				<br>
+				Good luck! And remember, MAXIMUM EFFORT!!</p>
+			</div>
+			
+			<div class="col-sm-4" id="dpbox">
+				<img class="center-block" id= "dpimg" src="assets/images/deadpool_need.jpg">
+			</div>
+
+			<div class="col-sm-2">
+			</div>
+		</div>
+
+		<div class="row">
+			<div>
+				<h1>Deadpool needs <span id="number-to-guess"></span> bullets!</h1>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-sm-2">
+			</div>
+			<div class="col-sm-8" id="crystals" ><h2>Click on some bullets to build Deadpools mission loadout!</h2>
+			<span id="bullets"></span>
+			</div>
+			<div class="col-sm-2">
+			</div>
+		</div>
+			
+		</div>
+	</div>
+
+
+
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+
+
+$(document).ready(function() {
+
+	var targetNumber = random;
+	var random = Math.floor(Math.random() * 120) + 19;
+	$("#number-to-guess").html(random);
+
+});
+
+
+ 
+$("#number-to-guess").text(targetNumber);
+
+var counter = 0;
+
+var bulletOptions = [10,5,3,7];
+
+for (var i=0; i<bulletOptions.length; i++) {
+	var imageBullet = $("<img>");
+	imageBullet.addClass("bullet-image");
+	imageBullet.attr("src", "https://thumbs.dreamstime.com/t/bullet-icon-cartoon-style-isolated-vector-illustration-88211476.jpg");
+	imageBullet.attr("data-bulletvalue", bulletOptions[i]);
+	$("#bullets").append(imageBullet);
+}
+
+$(".bullet-image").on("click", function() {
+	var bulletValue = ($(this).attr("data-bulletvalue"));
+	bulletValue = parseInt(bulletValue);
+
+	counter += bulletValue;
+
+	alert ("New Score: " + counter);
+
+	if (counter===targetNumber) {
+		alert("You win!");
+	}
+	else if (counter >= targetNumber) {
+		alert("You lose!");
+	}
+
+}); 
+
+  </script>
+</body>
+</html>
