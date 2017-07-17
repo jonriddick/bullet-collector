@@ -12,7 +12,7 @@ h1 {
 	text-align: center;
 	padding: 25px;
 	background-color: lightgrey;
-	text-decoration: underline;
+	text-decoration: ;
 }
 
 #instructions{
@@ -40,5 +40,5 @@ h1 {
 
 .infoBox {
 	border-bottom: solid;
-	text-decoration: underline;
+	text-decoration: ;
 }
