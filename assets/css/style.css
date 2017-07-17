@@ -12,6 +12,7 @@ h1 {
 	text-align: center;
 	padding: 25px;
 	background-color: lightgrey;
+	text-decoration: underline;
 }
 
 #instructions{
@@ -35,4 +36,9 @@ h1 {
 }
 #bullets {
 	background-color: red;
+}
+
+.infoBox {
+	border-bottom: solid;
+	text-decoration: underline;
 }
